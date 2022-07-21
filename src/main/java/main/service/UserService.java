@@ -20,4 +20,12 @@ public class UserService {
         return userRepository.findUserByLogin(login)
                 .orElseThrow(() -> new RuntimeException("Пользователя с логином = " + login + " не существует!"));
     }
+
+    public void save(User user) {
+        userRepository.save(user);
+    }
+
+    public void delete(User user) {
+        userRepository.delete(user);
+    }
 }

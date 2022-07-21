@@ -21,9 +21,10 @@ public class JwtProvider {
     private final SecretKey jwtSecret;
 
     public JwtProvider(
-            @Value("${jwt.secret.access}") String jwtAccessSecret
+            @Value("${jwt.secret.access}")
+            String jwtAccessSecret
     ) {
-        this.jwtSecret = Keys.hmacShaKeyFor(Decoders.BASE64.decode(jwtAccessSecret)); //преобразование обратно в массив байт
+        this.jwtSecret = Keys.hmacShaKeyFor(Decoders.BASE64.decode(jwtAccessSecret));
     }
 
     public String generateToken(User user) {
