@@ -24,4 +24,5 @@ For register a new user, you need to make a routing request: POST.
 POST method /api/auth/login
 curl: curl -H "Content-Type: application/json" -X POST http://localhost:9000/api/auth/login -d "{\"login\":\"ivan\",\"password\":\"1234\"}"
 Response:
-<div><img src="https://github.com/coollappsus/SearchEngine/blob/main/assets/Dashboard2.png?raw=true" alt="Dashboard"></div>
+<div><img src="https://github.com/coollappsus/AuthJwtToken/blob/main/assets/response_token.png?raw=true" alt="token"></div>
+
