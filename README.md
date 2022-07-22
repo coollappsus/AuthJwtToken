@@ -20,9 +20,9 @@ Controllers and services are covered by tests.
 <h3>Launch</h3>
 This service works on port: 9000
 <h3>Authentication</h3>
-For register a new user, you need to make a routing request: POST.
-POST method /api/auth/login
-curl: curl -H "Content-Type: application/json" -X POST http://localhost:9000/api/auth/login -d "{\"login\":\"ivan\",\"password\":\"1234\"}"
+For register a new user, you need to make a routing request: POST.<br>
+POST method /api/auth/login<br>
+curl: curl -H "Content-Type: application/json" -X POST http://localhost:9000/api/auth/login -d "{\"login\":\"ivan\",\"password\":\"1234\"}"<br>
 Response:
 <div><img src="https://github.com/coollappsus/AuthJwtToken/blob/main/assets/response_token.png?raw=true" alt="token"></div>
 
