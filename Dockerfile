@@ -1,5 +1,5 @@
 FROM alpine:latest
-EXPOSE 5555
+EXPOSE 9000
 RUN apk add openjdk16
 COPY /target/testTask-1.0-SNAPSHOT.jar /testTask-1.0.jar
 
