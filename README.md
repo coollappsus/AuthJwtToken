@@ -35,4 +35,13 @@ curl: curl -H "Content-Type: application/json" -H "Authorization: Bearer token" 
 Response:
 <div><img src="https://github.com/coollappsus/AuthJwtToken/blob/main/assets/response_save_message.png?raw=true" alt="save_message"></div>
 
+<h3>Message history</h3>
+For show the message history, you need to make a routing request: POST<br>
+The number of output messages depends on the entered value<br>
+POST method /api/message<br>
+curl: curl -H "Content-Type: application/json" -H "Authorization: Bearer token" -X POST http://localhost:9000/api/message -d "{\"name\":\"ivan\",\"message\":\"history 5\"}"<br>
+<div><img src="https://github.com/coollappsus/AuthJwtToken/blob/main/assets/request_save_message.png?raw=true" alt="message"></div>
+Response:
+<div><img src="https://github.com/coollappsus/AuthJwtToken/blob/main/assets/response_save_message.png?raw=true" alt="save_message"></div>
+
 
