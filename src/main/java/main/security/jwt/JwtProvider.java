@@ -32,10 +32,10 @@ public class JwtProvider {
         final Instant expirationInstant = now.plusHours(1).atZone(ZoneId.systemDefault()).toInstant();
         final Date accessExpiration = Date.from(expirationInstant);
         return Jwts.builder()
-                .setSubject(user.getLogin()) //указывает логин пользователя
-                .setExpiration(accessExpiration) //дату до которой токен валиден
-                .signWith(jwtSecret) //алгоритм шифрования
-                .claim("firstName", user.getFirstName()) //имя пользователя
+                .setSubject(user.getLogin())
+                .setExpiration(accessExpiration)
+                .signWith(jwtSecret)
+                .claim("firstName", user.getFirstName())
                 .compact();
     }
 
@@ -46,9 +46,9 @@ public class JwtProvider {
     private boolean validateToken(String token, Key secret) {
         try {
             Jwts.parserBuilder()
-                    .setSigningKey(secret) //устанавливает шифрование
+                    .setSigningKey(secret)
                     .build()
-                    .parseClaimsJws(token); //парсит токен согласно требованиям (секретного ключа, даты и имени)
+                    .parseClaimsJws(token);
             return true;
         } catch (Exception e) {
             e.printStackTrace();

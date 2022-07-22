@@ -15,7 +15,6 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    //Получить пользователя по логину
     public User getByLogin(String login) {
         return userRepository.findUserByLogin(login)
                 .orElseThrow(() -> new RuntimeException("Пользователя с логином = " + login + " не существует!"));

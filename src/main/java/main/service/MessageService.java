@@ -22,12 +22,10 @@ public class MessageService {
         this.messageRepository = messageRepository;
     }
 
-    //Сохранить сообщение
     public void saveMessage(User user, String message) {
         messageRepository.save(new Message(message, user, LocalDateTime.now(ZoneId.systemDefault())));
     }
 
-    //Получить определенное количество сообщений, количество передается через входной аргумент text
     public List<Message> getMessages(String text) {
         int count = Integer.parseInt(text.trim().substring(text.indexOf(' ') + 1));
         if (count == 0) {
@@ -37,7 +35,6 @@ public class MessageService {
                 PageRequest.of(0, count, Sort.by("id").descending())).toList();
     }
 
-    //Получить список сообщений определенного пользователя
     public List<Message> getMyMessages(User user) {
         return messageRepository.findMessageByUserId(user.getUserId()).get();
     }

@@ -23,9 +23,9 @@ public class AuthService {
     public JwtResponseDTO login(JwtRequestDTO authRequest) throws AuthException {
         final User user = userService.getByLogin(authRequest.getLogin());
 
-        if (user.getPassword().equals(authRequest.getPassword())) { // если пароль верен
-            final String accessToken = jwtProvider.generateToken(user); //то генерируем токен
-            return new JwtResponseDTO(accessToken); //возвращаем новый токен
+        if (user.getPassword().equals(authRequest.getPassword())) {
+            final String accessToken = jwtProvider.generateToken(user);
+            return new JwtResponseDTO(accessToken);
         } else {
             throw new AuthException("Неправильный пароль");
         }

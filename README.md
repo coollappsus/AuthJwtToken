@@ -5,7 +5,6 @@
     <img src="https://img.shields.io/badge/Spring-black?style=for-the-badge&logo=Spring" alt="Spring"/>
     <img src="https://img.shields.io/badge/Mysql-black?style=for-the-badge&logo=Mysql" alt="MySQL"/>
     <img src="https://img.shields.io/badge/Hibernate-black?style=for-the-badge&logo=Hibernate" alt="Hibernate"/>
-    <img src="https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JWT" alt="JWT"/>
 </div>
 <h3></h3>
 <h1>Description</h1>

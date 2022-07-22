@@ -37,13 +37,13 @@ public class JwtFilter extends GenericFilterBean {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse,
                          FilterChain filterChain) throws IOException, ServletException {
-        final String token = getTokenFromRequest((HttpServletRequest) servletRequest); //достаем токен
+        final String token = getTokenFromRequest((HttpServletRequest) servletRequest);
 
-        if (token != null && jwtProvider.validateAccessToken(token)) { //если токен не null и валиден
+        if (token != null && jwtProvider.validateAccessToken(token)) {
             final Claims claims = jwtProvider.getAccessClaims(token);
             final JwtAuthentication jwtInfoToken = JwtUtils.generate(claims);
-            jwtInfoToken.setAuthenticated(true); //разрешаем аутентификацию
-            SecurityContextHolder.getContext().setAuthentication(jwtInfoToken); //разрешаем проход в классе SecurityConfig
+            jwtInfoToken.setAuthenticated(true);
+            SecurityContextHolder.getContext().setAuthentication(jwtInfoToken);
         }
         filterChain.doFilter(servletRequest, servletResponse);
     }
