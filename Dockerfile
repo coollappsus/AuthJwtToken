@@ -1,6 +1,7 @@
-FROM alpine:latest
-EXPOSE 9000
-RUN apk add openjdk16
-COPY /target/testTask-1.0-SNAPSHOT.jar /testTask-1.0.jar
+FROM openjdk:latest
 
-ENTRYPOINT ["java", "-jar", "/testTask-1.0.jar"]
+WORKDIR /app
+
+COPY /target/testTask-1.0-SNAPSHOT.jar .
+
+ENTRYPOINT ["java", "-jar", "testTask-1.0-SNAPSHOT.jar"]
